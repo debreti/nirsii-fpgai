@@ -47,4 +47,4 @@ pure_hdl_workflow/
 
 ### Архитектура нейропроцессора
 
-![Архитектура нейропроцессора](pure_hdl_workflow/NPU_Architecture.png)
+![Архитектура нейропроцессора](NPU_Architecture.png)
