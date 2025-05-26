@@ -51,5 +51,4 @@ matlab_workflow/
 
 ### Архитектура нейропроцессора
 
-```markdown
 ![Архитектура Deep Learning Processor IP Core](deep_learning_processor_architecture.png)
