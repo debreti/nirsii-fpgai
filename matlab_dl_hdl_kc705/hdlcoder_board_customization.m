@@ -1,0 +1,6 @@
+function [boardList, workflow] = hdlcoder_board_customization
+boardList = { ...
+ 'DLKC705.plugin_board', ...
+ };
+workflow = hdlcoder.Workflow.DeepLearningProcessor;
+end
