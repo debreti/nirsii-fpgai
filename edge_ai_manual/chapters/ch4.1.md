@@ -516,7 +516,7 @@
 
 Таблица 4.1.5 - Зависимость ресурсоёмкости и частоты от числа MAC-блоков
 
-| MAC Count | Logic (ALMs) | Registers | Total block memory bits | DSP | Clock rate (MHz) | Latency, cycles | Latency, μs | FPS |
+| MAC Count | Logic (ALMs) | Registers | Total memory bits | DSP | Clock rate (MHz) | Latency, cycles | Latency, μs | FPS |
 |:---------:|:------------:|:---------:|:-----------------------:|:---:|:----------------:|:---------------:|:-----------:|:---:|
 | 2  | 310  | 731  | 825,408 | 5  | 186 | 53,600 | 288 | 3470 |
 | 4  | 360  | 837  | 827,456 | 7  | 194 | 27,725 | 143 | 6997 |
