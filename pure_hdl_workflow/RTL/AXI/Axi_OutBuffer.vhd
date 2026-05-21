@@ -1,0 +1,123 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_misc.all;
+library work;
+use work.NPU_Package.all;
+
+entity Axi_OutBuffer is
+    generic
+    (
+        INST_INX  : natural := 0;
+        FILE_INX  : natural := 0;
+        CELLS_CNT : natural := 1;
+        OUT_WIDTH : natural := 1
+    );
+    port
+    (
+        clk       : in  std_logic                                := '0';
+        rst       : in  std_logic                                := '0';
+        re        : in  std_logic                                := '0';
+        we        : in  std_logic                                := '0';
+        in_data   : in  std_logic_vector(OUT_WIDTH - 1 downto 0) := (others => '0');
+        out_valid : out std_logic                                := '0';
+        out_data  : out std_logic_vector(OUT_WIDTH - 1 downto 0) := (others => '0')
+    );
+end entity;
+
+architecture rtl of Axi_OutBuffer is
+    /* ┏━━━━━━━━━━━┓ */
+    -- ┃    FSM    ┃ --
+    /* ┗━━━━━━━━━━━┛ */
+    type t_state is (Fill, ValidSet, SlaveWait);
+    attribute enum_encoding            : string;
+    attribute enum_encoding of t_state : type is "one-hot";
+    signal state                       : t_state := Fill;
+    /* ┏━━━━━━━━━━━━━━┓ */
+    -- ┃    ARRAYS    ┃ --
+    /* ┗━━━━━━━━━━━━━━┛ */
+    type ram_array is array (0 to CELLS_CNT - 1) of std_logic_vector((OUT_WIDTH - 1) downto 0);
+    signal ram_data : ram_array := (others => (others => '0'));
+    /* ┏━━━━━━━━━━━━━━━┓ */
+    -- ┃    SIGNALS    ┃ --
+    /* ┗━━━━━━━━━━━━━━━┛ */
+    signal sp_max      : std_logic                                          := '0';
+    signal sp_inc      : std_logic                                          := '0';
+    signal valid_set   : std_logic                                          := '0';
+    signal valid_reset : std_logic                                          := '0';
+    signal mem_write   : std_logic                                          := '0';
+    signal sp_vector   : std_logic_vector(Log2Ceil(CELLS_CNT) - 1 downto 0) := (others => '0');
+    signal sp          : natural range 0 to (CELLS_CNT - 1)                 := 0;
+begin
+
+    valid_set   <= '1' when state = ValidSet else '0';                 -- Valid_set logic
+    valid_reset <= '1' when (re = '1' and state = SlaveWait) else '0'; -- Valid_reset logic
+    mem_write   <= '1' when (we = '1' and state = Fill) else '0';      -- Push logic
+
+    Stack_Ptr_Counter : entity work.Counter_FlgQ
+        generic map (
+            CNT_MAX => CELLS_CNT
+        )
+        port map (
+            clk      => clk,
+            rst      => rst,
+            en       => sp_inc,
+            max      => sp_max,
+            out_data => sp_vector
+        );
+    sp_inc <= mem_write or valid_reset; -- Stack pointer en
+    sp     <= to_integer(unsigned(sp_vector));
+
+    Seq_Logic_Arst : process(clk,rst)
+    begin
+        if(rst) THEN
+            out_valid <= '0';
+        elsif rising_edge(clk) then
+            -- Out valid register
+            if(valid_set or valid_reset) then
+                out_valid <= not out_valid;
+            end if;
+        end if;
+    end process;
+
+    Seq_Logic_Arst_Fsm_Behaviour : process(clk,rst)
+    begin
+        if(rst) THEN
+            state <= Fill;
+        elsif rising_edge(clk) then
+            case state is
+                when Fill =>
+                    -- Writing last value
+                    if(we and sp_max) then
+                        state <= ValidSet;
+                    end if;
+                when ValidSet =>
+                    state <= SlaveWait;
+                when SlaveWait =>
+                    -- Sending value
+                    if(re) then
+                        if(sp_max) then
+                            state <= Fill;
+                        else
+                            state <= ValidSet;
+                        end if;
+                    end if;
+                when others =>
+                    state <= Fill;
+            end case;
+        end if;
+    end process;
+
+    Seq_Logic : process(clk)
+    begin
+        if rising_edge(clk) then
+            -- Memory write
+            if(mem_write) then
+                ram_data(sp) <= in_data;
+            end if;
+            -- Output register read
+            out_data <= ram_data(sp);
+        end if;
+    end process;
+
+end architecture;

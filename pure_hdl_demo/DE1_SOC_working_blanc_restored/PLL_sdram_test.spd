@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="PLL_sdram_test_sim/PLL_sdram_test.vo" type="VERILOG" />
+ <topLevel name="PLL_sdram_test" />
+ <deviceFamily name="cyclonev" />
+</simPackage>
