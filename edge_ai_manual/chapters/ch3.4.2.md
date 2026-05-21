@@ -42,3 +42,5 @@ void vec_add(const float *a, const float *b, float *c, int n) {
 После разработки kernel-а используйте `vitis_hls` для запуска синтеза и получения отчётов по ресурсам и задержкам. Далее интегрируйте с проектом Vitis/Vivado для Place & Route и генерации bitstream.
 
 **Официальный ресурс:** ([Vitis HLS](https://www.xilinx.com/products/design-tools/vitis/vitis-hls.html)).
+
+</div>
