@@ -252,7 +252,7 @@ disp(speed);
 В проекте есть минимальная структура:
 
 ```text
-for_git/matlab_dl_hdl_kc705/
+matlab_dl_hdl_kc705/
   main.mlx
   hdlcoder_board_customization.m
   +DLKC705/
@@ -544,7 +544,7 @@ end
 В MATLAB:
 
 ```matlab
-projectRoot = "C:\Users\anton\OneDrive\Рабочий стол\НИЦ СФ\Matlab_FPGA\for_git\matlab_dl_hdl_kc705";
+projectRoot = fullfile(pwd, "matlab_dl_hdl_kc705");
 addpath(genpath(projectRoot));
 
 hPC = dlhdl.ProcessorConfig;
@@ -656,4 +656,4 @@ disp(speed);
 - MathWorks: [dlhdl.ProcessorConfig](https://www.mathworks.com/help/deep-learning-hdl/ref/dlhdl.processorconfig-class.html)
 - MathWorks: [Generate Custom Processor IP](https://www.mathworks.com/help/deep-learning-hdl/ug/generate-custom-processor-ip.html)
 - MathWorks: [Deep Learning Processor IP Core Generation for Custom Board](https://www.mathworks.com/help/deep-learning-hdl/ug/define-custom-board-and-reference-design-for-dl-ip-core-workflow.html)
-- Локальный пример custom board: `for_git/matlab_dl_hdl_kc705`
+- Локальный пример custom board: `matlab_dl_hdl_kc705`
