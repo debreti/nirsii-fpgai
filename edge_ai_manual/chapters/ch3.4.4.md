@@ -4,7 +4,7 @@
 
 <a name="image_3_4_4_1"></a>
 <figure>
-  <img src="../assets/image_3_4_4_1.png" alt="GoAI 2.0 в классификации" width="100" style="float:right; margin: 7px 7px 7px 20px"/>
+  <img src="../assets/image_3_4_4_1.png" alt="GoAI 2.0 в классификации" width="150" style="float:right; margin: 7px 7px 7px 20px"/>
 </figure>
 
 GoAI 2.0 — легковесная и модульная платформа, ориентированная на развёртывание компактных нейронных моделей в ресурсно-ограниченных системах: микроконтроллерах, маломощных [SoC](glossary.md#soc) и компактных [FPGA](glossary.md#fpga). Основная задача GoAI — обеспечить надежный и предсказуемый inference с минимальными накладными расходами по памяти и вычислениям, сохранив при этом простые механизмы интеграции с классическими ML‑pipeline (экспорт из PyTorch/ONNX/TensorFlow).
