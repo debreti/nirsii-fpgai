@@ -1,0 +1,65 @@
+### Ignore everything
+*
+
+### Unignore folders
+!/DE1_SOC_working_blanc_restored/
+
+### Include by format
+# Git files
+!.gitignore
+
+# Quartus files
+!*.qpf
+!*.qsf
+
+# HDL
+!*.vht
+!*.vhd
+!*.vhdl
+!*.v
+!*.sv
+!*.vho
+!*.vo
+!*.do
+!*.tcl
+
+# Verilog constant includes
+!*.h
+
+# Quartus IP
+!*.qip
+!*.sip
+!*.spd
+
+# Timing
+!*.sdc
+
+# QSYS
+!*.qsys
+#*bak.qsys
+
+#!*.sof
+#!*.jic
+#!*.pof
+
+# Memory
+!*.hex
+!*.mif
+!*.txt
+
+# Python
+!*.npz
+!*.npy
+!*.py
+
+# Signaltap
+#!*.stp
+
+# Modelsim
+!*.mpf
+
+# Markup
+!*.json
+
+# Ignore black box files
+*_bb.v
