@@ -9,7 +9,7 @@
 - быстром сценарие запуска на поддерживаемой плате на примере Xilinx Zynq-7000 ZC706;
 - сценарие custom board на примере проекта `matlab_dl_hdl_kc705` и платы Xilinx Kintex-7 KC705.
 
-![Структура MATLAB-инструментов для разработки и имплементации нейронной сети на FPGA](matlab_structure.png)
+![Структура MATLAB-инструментов для разработки и имплементации нейронной сети на FPGA](../assets/image_4_2_1.png)
 
 ## 2. Инструменты MATLAB
 
@@ -148,7 +148,7 @@ save("digits_cnn_int8_quantizer.mat", "q");
 
 Deep Learning HDL Toolbox не генерирует отдельную уникальную [RTL](glossary.md#rtl)-схему для каждого слоя сети. Основная идея другая: на FPGA размещается настраиваемый deep learning processor, а сеть компилируется в набор инструкций, весов, смещений и memory map для этого процессора.
 
-![MATLAB-controlled deep learning processor](ml_controlled_dl_processor.png)
+![MATLAB-controlled deep learning processor](../assets/image_4_2_2.png)
 
 На схеме показана типовая архитектура MATLAB-controlled deep learning processor. MATLAB на хост-компьютере выступает управляющей средой: компилирует сеть, загружает bitstream, передает инструкции, веса и входные данные, а затем считывает результаты инференса и данные профайлера. Связь с платой обычно выполняется через JTAG AXI Manager или Ethernet-интерфейс.
 
@@ -393,7 +393,7 @@ end
 
 `design_1.tcl` должен восстанавливать block design с инфраструктурой, к которой MATLAB позже подключит deep learning processor.
 
-![Reference design Vivado, подготовленный под интеграцию DL processor](design_3.png)
+![Reference design Vivado, подготовленный под интеграцию DL processor](../assets/image_4_2_3.png)
 
 
 На рисунке показан reference design из Vivado, который экспортируется в Tcl и затем подключается в `plugin_rd.m` через `addCustomVivadoDesign`. Этот дизайн еще не является специализированным neural-network bitstream: он задает аппаратную инфраструктуру, в которую HDL Coder встраивает сгенерированный deep learning processor. В нем должны быть уже подготовлены DDR/MIG, clock/reset blocks, AXI interconnect, JTAG AXI Manager и свободные AXI-подключения под управляющий интерфейс, активации, веса и debug/profiler.
