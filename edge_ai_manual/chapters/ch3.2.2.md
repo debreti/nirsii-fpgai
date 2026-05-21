@@ -4,7 +4,7 @@
 
 <a name="image_3_2_2_1"></a>
 <figure>
-  <img src="../assets/image_3_2_2_1.png" alt="Tensorflow в классификации" width="400" style="float:right; margin: 7px 7px 7px 7px"/>
+  <img src="../assets/image_3_2_2_1.png" alt="Tensorflow в классификации" width="400" style="float:right; margin: 7px 7px 7px 20px"/>
 </figure>
 
 TensorFlow, разработанный Google, представляет собой промышленно-ориентированный фреймворк глубокого обучения, приоритизирующий производительность, масштабируемость и интеграцию в production-решения. В отличие от PyTorch, изначально ориентированного на исследовательский процесс, TensorFlow спроектирован для развёртывания моделей в реальных системах с миллиардами пользователей. Это делает его особенно привлекательным для разработки [Edge AI](glossary.md#edgeai) решений, где требуется стабильность, оптимизация и поддержка разнообразных аппаратных платформ ([FPGA](glossary.md#fpga), мобильные устройства, [TPU](glossary.md#tpu), [ASIC](glossary.md#asic)).
@@ -21,7 +21,7 @@ TensorFlow предоставляет слоистую архитектуру а
 
 * **Оптимизированный инференс:** TensorFlow Lite обеспечивает сжатие моделей и их оптимизацию для встраиваемых устройств;
 * **Кросс-платформенность:** поддержка [CPU](glossary.md#cpu), [GPU](glossary.md#gpu), [TPU](glossary.md#tpu), FPGA через TensorFlow Compiler (XLA);
-* **Встроенная [квантизация](glossary.md#quantization):** post-training quantization (PTQ) и quantization-aware training (QAT);
+* **Встроенная [квантизация](glossary.md#quantization):** post-training quantization (PTQ) и quantization-aware training ([QAT](glossary.md#qat));
 * **Экспортируемость:** прямой экспорт в SavedModel, TFLite, ONNX форматы.
 
 #### Полный цикл разработки CNN в TensorFlow/Keras
@@ -230,5 +230,7 @@ predictions = compiled_forward(x_test[:10])
 #### Заключение
 
 TensorFlow демонстрирует высокий уровень оптимизации и готовности к production-развёртыванию Edge AI решений. Встроенные инструменты для [квантизации](glossary.md#quantization), поддержка TensorFlow Lite для мобильных и встраиваемых устройств, а также тесная интеграция с аппаратными ускорителями делают его идеальным выбором для промышленных приложений. Представленный подход показывает полный цикл: от построения архитектуры в Keras до получения оптимизированной и квантованной модели, готовой к развёртыванию на FPGA, мобильных устройствах или облачных сервисах.
+
+**Официальный ресурс:** ([TensorFlow](https://www.tensorflow.org/)).
 
 </div>

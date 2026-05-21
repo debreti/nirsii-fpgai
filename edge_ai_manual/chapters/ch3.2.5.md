@@ -7,13 +7,13 @@
   <img src="../assets/image_3_2_5_1.png" alt="PaddlePaddle в классификации" width="400" style="float:right; margin: 7px 7px 7px 7px"/>
 </figure>
 
-PaddlePaddle (Parallel Distributed Deep LEarning), разработанный компанией Baidu, представляет собой открытый фреймворк глубокого обучения, спроектированный с акцентом на производительность, простоту использования и готовность к production-развёртыванию. В то время как PyTorch ориентирован на исследования, а TensorFlow — на масштабируемость в облаке, PaddlePaddle занимает промежуточную позицию, предоставляя полный и самодостаточный стек инструментов для разработки [Edge AI](glossary.md#edgeai) решений особенно в контексте мобильных устройств и встраиваемых систем.
+PaddlePaddle (PArallel Distributed Deep LEarning), разработанный компанией Baidu, представляет собой открытый фреймворк глубокого обучения, спроектированный с акцентом на производительность, простоту использования и готовность к production-развёртыванию. В то время как PyTorch ориентирован на исследования, а TensorFlow — на масштабируемость в облаке, PaddlePaddle занимает промежуточную позицию, предоставляя полный и самодостаточный стек инструментов для разработки [Edge AI](glossary.md#edgeai) решений особенно в контексте мобильных устройств и встраиваемых систем.
 
 #### Преимущества PaddlePaddle для Edge AI
 
 **Встроенная поддержка оптимизации:**
 
-* **Прямая поддержка [квантизации](glossary.md#quantization):** встроенные инструменты post-training quantization (PTQ) и quantization-aware training (QAT) без необходимости в отдельных библиотеках;
+* **Прямая поддержка [квантизации](glossary.md#quantization):** встроенные инструменты post-training quantization (PTQ) и quantization-aware training ([QAT](glossary.md#qat)) без необходимости в отдельных библиотеках;
 * **Pruning и knowledge distillation:** встроенные методы [прунинга](glossary.md#pruning) и [дистилляции знаний](glossary.md#distillation) прямо в API;
 * **PaddleLite:** облегчённый инференс-движок для мобильных устройств и [FPGA](glossary.md#fpga) с оптимизацией под конкретные процессоры (ARM, x86, мобильные [GPU](glossary.md#gpu)).
 

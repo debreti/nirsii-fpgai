@@ -4,7 +4,7 @@
 
 <a name="image_3_2_4_1"></a>
 <figure>
-  <img src="../assets/image_3_2_4_1.png" alt="MATLAB DLTB в классификации" width="400" style="float:right; margin: 7px 7px 7px 7px"/>
+  <img src="../assets/image_3_2_4_1.png" alt="MATLAB DLTB в классификации" width="400" style="float:right; margin: 7px 7px 7px 20px"/>
 </figure>
 
 Deep Learning Toolbox (DLTB) в MATLAB – это универсальная платформа для построения, обучения, анализа и оптимизации нейронных сетей, включающая как программный интерфейс, так и визуальные приложения. В рамках данного руководства мы будем рассматривать DLTB с точки зрения разработки алгоритмов ИИ для последующей их имплементации на программируемую логику, что накладывает некоторые ограничения, например, при выборе слоёв при проектировании архитектуры нейросетевой модели, так как не все слои доступны для использования в Deep Learning HDL Toolbox ([Mathworks](https://www.mathworks.com/help/deep-learning-hdl/ug/supported-layers.html)), речь о котором пойдёт в следующих главах.
