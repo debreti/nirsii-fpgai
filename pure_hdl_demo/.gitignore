@@ -7,7 +7,7 @@
 ### Include by format
 # Git files
 !.gitignore
-!.md
+!*.md
 
 # Quartus files
 !*.qpf
