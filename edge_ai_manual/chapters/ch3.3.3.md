@@ -4,7 +4,7 @@
 
 <a name="image_3_3_3_1"></a>
 <figure>
-  <img src="../assets/image_3_3_3_1.png" alt="OpenVINO в классификации" width="400" style="float:right; margin: 7px 7px 7px 20px"/>
+  <img src="../assets/image_3_3_3_1.png" alt="OpenVINO в классификации" width="600"; margin: 7px 7px 7px 20px"/>
 </figure>
 
 Intel OpenVINO — это универсальный набор инструментов для оптимизации и ускорения инференса нейронных сетей на процессорах Intel, графических ускорителях, VPU и [FPGA](glossary.md#fpga). В отличие от специализированных компиляторов, OpenVINO позволяет быстро адаптировать одну и ту же модель под разные аппаратные платформы, используя промежуточное представление (IR) и аппаратные плагины.
