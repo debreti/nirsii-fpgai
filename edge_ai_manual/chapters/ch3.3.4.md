@@ -4,7 +4,7 @@
 
 <a name="image_3_3_4_1"></a>
 <figure>
-  <img src="../assets/image_3_3_4_1.png" alt="Brevitas в классификации" width="400" style="float:right; margin: 7px 7px 7px 20px"/>
+  <img src="../assets/image_3_3_4_1.png" alt="Brevitas в классификации" width="200" style="float:right; margin: 7px 7px 7px 20px"/>
 </figure>
 
 

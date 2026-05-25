@@ -4,7 +4,7 @@
 
 <a name="image_3_3_5_1"></a>
 <figure>
-  <img src="../assets/image_3_3_5_1.png" alt="FINN в классификации" width="400" style="float:right; margin: 7px 7px 7px 20px"/>
+  <img src="../assets/image_3_3_5_1.png" alt="FINN в классификации" width="125" style="float:right; margin: 7px 7px 7px 20px"/>
 </figure>
 
 FINN — это исследовательский фреймворк, разработанный Xilinx Research для автоматизации компиляции низкоразрядных нейронных сетей в аппаратные реализации на [FPGA](glossary.md#fpga). В связке с Brevitas он позволяет пройти путь от аннотированной PyTorch-модели до [HLS](glossary.md#hls)/[RTL](glossary.md#rtl)-описания, пригодного для синтеза и развёртывания на реальном оборудовании.
