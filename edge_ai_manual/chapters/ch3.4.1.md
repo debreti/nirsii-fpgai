@@ -4,7 +4,7 @@
 
 <a name="image_3_4_1_1"></a>
 <figure>
-  <img src="../assets/image_3_4_1_1.png" alt="MATLAB DLHDL Toolbox в классификации" width="400" style="float:right; margin: 7px 7px 7px 20px"/>
+  <img src="../assets/image_3_4_1_1.png" alt="MATLAB DLHDL Toolbox в классификации" width="650"; margin: 7px 7px 7px 20px"/>
 </figure>
 
 MATLAB Deep Learning HDL Toolbox и HDL Coder предоставляют полный путь от проектирования и обучения нейросетей в MATLAB или Simulink до генерации синтезируемого HDL-кода для [FPGA](glossary.md#fpga) или [ASIC](glossary.md#asic). Такой подход особенно востребован в задачах, где требуется ускорение инференса с помощью программируемой логики и важна воспроизводимость результатов.
